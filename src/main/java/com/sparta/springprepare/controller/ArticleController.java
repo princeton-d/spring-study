@@ -33,7 +33,7 @@ public class ArticleController {
         return ResponseEntity.ok().body(articleResource);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ArticleResource> getArticle(@PathVariable Long id) {
         List<ResponseArticleDto> responseArticleDtos = articleService.getArticleResponseDtoById(id);
         WebMvcLinkBuilder selfLinkBuilder = linkTo(ArticleController.class).slash(id);
@@ -75,7 +75,7 @@ public class ArticleController {
         return articleResource;
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteArticle(@RequestBody RequestArticleDto requestArticleDto) {
         articleService.deleteArticle(requestArticleDto);
         return ResponseEntity.ok().body("deleted");

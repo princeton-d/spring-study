@@ -1,0 +1,3 @@
+[submodule "spring-study-submodule"]
+	path = spring-study-submodule
+	url = https://github.com/princeton-d/spring-study-submodule.git
